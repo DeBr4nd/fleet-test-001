@@ -1,4 +1,6 @@
 namespace: tests
+helm:
+  chart: ./charts/app-test-003
 paths:
 - app-test-001/
 - app-test-001/
