@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-test-002
+  namespace: tests
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-test-002
+  template:
+    metadata:
+      labels:
+        app: app-test-002
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 150m
+            memory: 196Mi
+          requests:
+            cpu: 75m
+            memory: 128Mi
